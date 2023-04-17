@@ -1,12 +1,18 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  uuid:
+    specifier: ^9.0.0
+    version: 9.0.0
   vue:
     specifier: ^3.2.47
     version: 3.2.47
   vue-router:
     specifier: ^4.1.6
     version: 4.1.6(vue@3.2.47)
+  vuex:
+    specifier: ^4.0.2
+    version: 4.0.2(vue@3.2.47)
 
 devDependencies:
   '@vitejs/plugin-vue':
@@ -1196,6 +1202,11 @@ packages:
       requires-port: 1.0.0
     dev: true
 
+  /uuid@9.0.0:
+    resolution: {integrity: sha512-MXcSTerfPa4uqyzStbRoTgt5XIe3x5+42+q1sDuy3R5MDk66URdLMOZe5aPX/SQd+kuYAh0FdP/pO28IkQyTeg==}
+    hasBin: true
+    dev: false
+
   /vite-node@0.29.1(@types/node@18.15.11):
     resolution: {integrity: sha512-Ey9bTlQOQrCxQN0oJ7sTg+GrU4nTMLg44iKTFCKf31ry60csqQz4E+Q04hdWhwE4cTgpxUC+zEB1kHbf5jNkFA==}
     engines: {node: '>=v14.16.0'}
@@ -1324,6 +1335,15 @@ packages:
       '@vue/runtime-dom': 3.2.47
       '@vue/server-renderer': 3.2.47(vue@3.2.47)
       '@vue/shared': 3.2.47
+
+  /vuex@4.0.2(vue@3.2.47):
+    resolution: {integrity: sha512-M6r8uxELjZIK8kTKDGgZTYX/ahzblnzC4isU1tpmEuOIIKmV+TRdc+H4s8ds2NuZ7wpUTdGRzJRtoj+lI+pc0Q==}
+    peerDependencies:
+      vue: ^3.0.2
+    dependencies:
+      '@vue/devtools-api': 6.5.0
+      vue: 3.2.47
+    dev: false
 
   /w3c-xmlserializer@4.0.0:
     resolution: {integrity: sha512-d+BFHzbiCx6zGfz0HyQ6Rg69w9k19nviJspaj4yNscGjrHu94sVP+aRm75yEbCh+r2/yR+7q6hux9LVtbuTGBw==}
