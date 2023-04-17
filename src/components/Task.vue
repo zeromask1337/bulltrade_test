@@ -1,8 +1,11 @@
 <script setup>
 import { computed } from 'vue';
 import { useStore } from 'vuex'
+import { useRouter } from 'vue-router';
 
 const store = useStore()
+const router = useRouter()
+const currentRouteName = computed(() => router.currentRoute.value.name)
 const props = defineProps({
     id: {
         type: String,
@@ -20,18 +23,20 @@ const props = defineProps({
 </script>
 
 <template>
-    <li class="active-todo">
+    <li @click="router.push({path: '/edit', query: { id: props.id}})" class="active-todo">
         <p v-if="isActive">
             {{ props.content.length > 50 ? props.content.slice(0, 50) + "..." : props.content }}</p>
         <p v-else><s>{{ props.content }}</s></p>
 
-        <button
-            class="todo-edit-btn"
-            v-if="isActive"
-            @click.stop="store.commit('markDone', props.id)">\/</button>
-        <button
-            class="todo-delete-btn"
-            @click.stop="store.commit('deleteTodo', props.id)">X</button>
+        <template v-if="currentRouteName === 'home'">
+            <button
+                class="todo-edit-btn"
+                v-if="isActive"
+                @click.stop="store.commit('markDone', props.id)">\/</button>
+            <button
+                class="todo-delete-btn"
+                @click.stop="store.commit('deleteTodo', props.id)">X</button>
+        </template>
         </li>
 </template>
 
