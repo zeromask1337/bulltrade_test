@@ -17,6 +17,23 @@ const store = createStore({
                     "is_active": false}
                 ]
         ])
+    },
+    mutations: {
+        addTodo: (state, input) => {
+            state.todos.set(uuidv4(), {
+                "content": input,
+                "is_active": true
+            })
+        },
+        deleteTodo: (state, id) => {
+            state.todos.delete(id)
+        },
+        markDone: (state, id) => {
+            state.todos.set(id, {...state.todos.get(id), "is_active": false})
+        },
+        updateTodo: (state, payload) => {
+            state.todos.set(payload.id, {...state.todos.get(payload.id), "content": payload.content})
+        }
     }
 })
 
