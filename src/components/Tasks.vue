@@ -6,13 +6,13 @@ const store = useStore()
 </script>
 
 <template>
-        <ul>
-            <Task v-for="[key, value] in store.state.todos"
-            :key="key"
-            :content="value.content"
-            :id="key"
-            :is-active="value.is_active"/>
-        </ul>
+    <ul>
+        <Task v-for="[key, value] in store.state.todos"
+        :key="key"
+        :content="value.content"
+        :id="key"
+        :is-active="value.is_active"/>
+    </ul>
 </template>
 
 <style scoped>
